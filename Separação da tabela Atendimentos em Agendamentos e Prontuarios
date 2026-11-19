@@ -1,0 +1,29 @@
+tabelas_normalizadas.sql
+CREATE TABLE Agendamentos (
+    id_agendamento INTEGER PRIMARY KEY,
+    nome_paciente VARCHAR(100),
+    cpf_paciente VARCHAR(14),
+    nome_medico VARCHAR(100),
+    crm_medico VARCHAR(20),
+    data_consulta DATETIME,
+    horario_consulta TIME,
+    sala_consulta VARCHAR(20),
+    tipo_consulta VARCHAR(50),
+    status_consulta VARCHAR(50)
+);
+
+CREATE TABLE Prontuarios (
+    id_prontuario INTEGER PRIMARY KEY,
+    id_agendamento INTEGER,
+    peso DECIMAL(5,2),
+    altura DECIMAL(4,2),
+    pressao_arterial VARCHAR(20),
+    temperatura DECIMAL(4,1),
+    sintomas TEXT,
+    diagnostico TEXT,
+    prescricao TEXT,
+    observacoes TEXT,
+
+    FOREIGN KEY (id_agendamento)
+        REFERENCES Agendamentos(id_agendamento)
+);
