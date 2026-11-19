@@ -1,0 +1,76 @@
+banco_antigo.sql
+-- BANCO ANTIGO (COM PROBLEMAS DE REDUNDÂNCIA)
+
+CREATE TABLE Atendimentos (
+
+    id_atendimento INTEGER PRIMARY KEY,
+
+    nome_paciente VARCHAR(100),
+    cpf_paciente VARCHAR(14),
+    rg_paciente VARCHAR(20),
+    data_nascimento DATE,
+    sexo VARCHAR(20),
+    telefone_paciente VARCHAR(20),
+    email_paciente VARCHAR(100),
+    endereco_paciente VARCHAR(200),
+    bairro_paciente VARCHAR(100),
+    cidade_paciente VARCHAR(100),
+    estado_paciente VARCHAR(2),
+
+    nome_plano VARCHAR(100),
+    numero_carteirinha VARCHAR(50),
+    validade_plano DATE,
+
+    nome_medico VARCHAR(100),
+    crm_medico VARCHAR(20),
+    especialidade_medico VARCHAR(100),
+    telefone_medico VARCHAR(20),
+    email_medico VARCHAR(100),
+
+    data_consulta DATETIME,
+    horario_consulta TIME,
+    sala_consulta VARCHAR(20),
+    tipo_consulta VARCHAR(50),
+    status_consulta VARCHAR(50),
+
+    peso DECIMAL(5,2),
+    altura DECIMAL(4,2),
+    pressao_arterial VARCHAR(20),
+    temperatura DECIMAL(4,1),
+
+    sintomas TEXT,
+    diagnostico TEXT,
+    prescricao TEXT,
+    observacoes TEXT,
+
+    valor_consulta DECIMAL(10,2),
+    forma_pagamento VARCHAR(50),
+    data_pagamento DATE,
+
+    atendente VARCHAR(100),
+    data_cadastro DATETIME
+);
+
+INSERT INTO Atendimentos VALUES
+(1,'Ana Souza','123.456.789-00','12.345.678-9','1998-04-12','Feminino','11999999999','ana@email.com','Rua das Flores, 100','Centro','São Paulo','SP','Unimed','UNI123456','2027-12-31','Carlos Silva','CRM12345','Cardiologia','11988887777','carlos@clinica.com','2026-11-10 09:00:00','09:00:00','Sala 05','Retorno','Finalizada',65,1.65,'12x8',36.5,'Dor no peito','Hipertensão leve','Losartana 50mg','Retorno em 30 dias',250,'Cartão','2026-11-10','Mariana','2026-11-10 08:30:00');
+
+INSERT INTO Atendimentos VALUES
+(2,'Ana Souza','123.456.789-00','12.345.678-9','1998-04-12','Feminino','11999999999','ana@email.com','Rua das Flores, 100','Centro','São Paulo','SP','Unimed','UNI123456','2027-12-31','Carlos Silva','CRM12345','Cardiologia','11988887777','carlos@clinica.com','2026-12-15 14:00:00','14:00:00','Sala 05','Retorno','Finalizada',64.5,1.65,'12x8',36.4,'Acompanhamento','Quadro estável','Continuar medicação','Retorno em 60 dias',250,'Cartão','2026-12-15','Mariana','2026-12-15 13:40:00');
+
+INSERT INTO Atendimentos VALUES
+(3,'Bruno Almeida','987.654.321-00','45.678.123-1','1985-09-20','Masculino','11987654321','bruno@email.com','Rua Oliveira, 250','Vila Mariana','São Paulo','SP','Amil','AMI987654','2028-05-30','Fernanda Costa','CRM67890','Dermatologia','11977778888','fernanda@clinica.com','2026-11-18 10:30:00','10:30:00','Sala 03','Primeira Consulta','Finalizada',82,1.78,'12x8',36.6,'Manchas na pele','Dermatite','Pomada dermatológica','Retorno em 15 dias',180,'Pix','2026-11-18','Juliana','2026-11-18 09:50:00');
+
+INSERT INTO Atendimentos VALUES
+(4,'Camila Santos','741.852.963-00','78.123.456-2','1993-07-15','Feminino','11991234567','camila@email.com','Rua Paraná, 87','Mooca','São Paulo','SP','SulAmérica','SUL456789','2027-09-10','Carlos Silva','CRM12345','Cardiologia','11988887777','carlos@clinica.com','2026-11-20 15:00:00','15:00:00','Sala 05','Primeira Consulta','Finalizada',58,1.63,'13x8',36.4,'Palpitações','Arritmia leve','Exames complementares','Monitoramento cardíaco',250,'Cartão','2026-11-20','Mariana','2026-11-20 14:20:00');
+
+INSERT INTO Atendimentos VALUES
+(101,'Pedro Gomes','12345678901','123456789','1989-06-15','Masculino','11987654321','pedro@email.com','Rua Alfa, 50','Centro','São Paulo','SP','Unimed','UNI101','2028-12-31','Carlos Silva','CRM12345','Cardiologia','11988887777','carlos@clinica.com','2026-12-01 09:00:00','09:00:00','Sala 05','Primeira Consulta','Finalizada',82,1.79,'12x8',36.5,'Falta de ar','Hipertensão','Losartana','Retorno em 30 dias',250,'Cartão','2026-12-01','Mariana','2026-12-01 08:30:00');
+
+INSERT INTO Atendimentos VALUES
+(102,'Julia Martins','23456789012','234567890','1997-11-10','Feminino','11976543210','julia@email.com','Rua Beta, 120','Mooca','São Paulo','SP','Amil','AMI102','2029-05-20','Fernanda Costa','CRM67890','Dermatologia','11977778888','fernanda@clinica.com','2026-12-02 10:00:00','10:00:00','Sala 03','Retorno','Finalizada',60,1.65,'11x7',36.4,'Acne','Acne moderada','Pomada','Melhora observada',180,'Pix','2026-12-02','Juliana','2026-12-02 09:40:00');
+
+INSERT INTO Atendimentos VALUES
+(103,'Lucas Santos','34567890123','345678901','1975-02-20','Masculino','11965432109','lucas@email.com','Rua Gama, 300','Tatuapé','São Paulo','SP','Bradesco Saúde','BRA103','2028-08-10','Ana Ribeiro','CRM54321','Ortopedia','11996665544','ana@clinica.com','2026-12-03 14:00:00','14:00:00','Sala 02','Primeira Consulta','Finalizada',91,1.83,'13x8',36.7,'Dor no joelho','Tendinite','Anti-inflamatório','Sessões de fisioterapia',220,'Dinheiro','2026-12-03','Mariana','2026-12-03 13:30:00');
+
+INSERT INTO Atendimentos VALUES
+(104,'Carla Oliveira','45678901234','456789012','1992-04-18','Feminino','11954321098','carla@email.com','Rua Delta, 78','Santana','São Paulo','SP','SulAmerica','SUL104','2028-04-01','Carlos Silva','CRM12345','Cardiologia','11988887777','carlos@clinica.com','2026-12-05 16:00:00','16:00:00','Sala 05','Check-up','Finalizada',68,1.68,'12x8',36.6,'Cansaço','Exames preventivos','Nenhuma','Paciente saudável',250,'Cartão','2026-12-05','Juliana','2026-12-05 15:20:00');
